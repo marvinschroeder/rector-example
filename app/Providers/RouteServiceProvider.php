@@ -18,6 +18,7 @@ final class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     public const HOME = '/home';
+
     /**
      * @var string
      */
@@ -58,7 +59,7 @@ final class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function configureRateLimiting()
+    private function configureRateLimiting()
     {
         RateLimiter::for(self::API, fn(Request $request) => Limit::perMinute(60)->by(optional($request->user())->id ?: $request->ip()));
     }
