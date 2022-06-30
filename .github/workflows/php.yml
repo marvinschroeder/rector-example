@@ -36,4 +36,4 @@ jobs:
     # Docs: https://getcomposer.org/doc/articles/scripts.md
 
     - name: Run rector
-       run: composer run-script rector
+      run: composer run-script rector
